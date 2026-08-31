@@ -1,0 +1,40 @@
+[[language]]
+name = "rust"
+formatter = { command = "rustfmt", args = ["--emit", "stdout"]}
+auto-format = true
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+[language-server.rust-analyzer.config.cargo]
+features = "all"
+
+[[language]]
+name = "json"
+formatter = { command = "jq", args = ["."] }
+
+[[language]]
+name = "markdown"
+formatter = { command = "prettier", args = ["--parser", "markdown"]}
+auto-format = true
+soft-wrap.enable = true
+comment-tokens = ["-", "+", "*", "1.", ">", "- [ ]"]
+auto-pairs = { '`' = '`', '*' = '*', '_' = '_' }
+
+[[language]]
+name = "html"
+formatter = { command = 'prettier', args = ["--parser", "css"] }
+
+[[language]]
+name = "python"
+auto-format = true
+
+[[language]]
+name = "go"
+auto-format = true
+language-servers = [ "gopls"]
+
+[[language]]
+name = "yaml"
+auto-format = true
+formatter = { command = 'prettier', args = ["--parser", "yaml"] }
